@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Quanlydiem.Models.DIEM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Điểm</h2>
+@Styles.Render("~/Content/css")
+<p>
+    @Html.ActionLink("Tạo mới dữ liệu điểm", "Create")
+</p>
+<table class="w3-table-all w3-hoverable w3-card">
+    <tr class="w3-blue-grey">
+        <th>
+            <label>Mã Học Sinh</label>
+        </th>
+        <th>
+            <label>Mã Môn</label>
+        </th>
+        <th>
+            <label>Điểm Miệng</label>
+        </th>
+        <th>
+            <label>Điểm Một Tiết</label>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaHS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaMon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiemMieng)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiemMotTiet)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.bangdiem }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.bangdiem })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,56 @@
+﻿@model Quanlydiem.Models.DIEM
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h3>Bạn có chắc muốn xóa dữ liệu không?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Mã Học Sinh</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaHS)
+        </dd>
+
+        <dt>
+            <label>Mã Môn Học</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaMon)
+        </dd>
+
+        <dt>
+            <label>Điểm Miệng</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemMieng)
+        </dd>
+
+        <dt>
+            <label>Điểm Một Tiết</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemMotTiet)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay Lại", "Index")
+        </div>
+    }
+</div>

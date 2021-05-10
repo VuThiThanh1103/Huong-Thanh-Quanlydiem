@@ -1,0 +1,42 @@
+﻿@model Quanlydiem.Models.MONHOC
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc muốn xóa không?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           <label>Tên Môn Học</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMonHoc)
+        </dd>
+
+        <dt>
+           <label>Sĩ Số</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiSo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay Lại", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,51 @@
+﻿@model Quanlydiem.Models.DIEM
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+
+<div>
+    <h4>DIEM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaHS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaHS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaMon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaMon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiemMieng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemMieng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiemMotTiet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemMotTiet)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bangdiem }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quản Lý Điểm</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/ckeditor")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Học Sinh", "Index", "HOCSINHs")</li>
+                    <li>@Html.ActionLink("Giáo Viên", "Index", "GIAOVIENs")</li>
+                    <li>@Html.ActionLink("Môn Học", "Index", "MONHOCs")</li>
+                    <li>@Html.ActionLink("Lớp", "Index", "LOPs")</li>
+                    <li>@Html.ActionLink("Điểm", "Index", "DIEMs")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    <li>@Html.ActionLink("Đăng Nhập", "Login", "Account")</li>
+                    <li>@Html.ActionLink("Đăng Xuất", "Logout", "Account")</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Thanh Thanh</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
