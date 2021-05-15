@@ -17,7 +17,8 @@ namespace Quanlydiem.Controllers
         // GET: GIAOVIENs
         public ActionResult Index()
         {
-            return View(db.GIAOVIENS.ToList());
+            var gIAOVIENS = db.GIAOVIENS.Include(g => g.LOP).Include(g => g.MONHOC);
+            return View(gIAOVIENS.ToList());
         }
 
         // GET: GIAOVIENs/Details/5
@@ -38,6 +39,8 @@ namespace Quanlydiem.Controllers
         // GET: GIAOVIENs/Create
         public ActionResult Create()
         {
+            ViewBag.MaLop = new SelectList(db.LOPS, "MaLop", "TenLop");
+            ViewBag.MaMon = new SelectList(db.MONHOCS, "MaMon", "TenMon");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace Quanlydiem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaGV,HoTenGV,NamSinh,MaMon,SoDT")] GIAOVIEN gIAOVIEN)
+        public ActionResult Create([Bind(Include = "MaGV,HoTenGV,NamSinh,MaMon,SoDT,MaLop")] GIAOVIEN gIAOVIEN)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace Quanlydiem.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.MaLop = new SelectList(db.LOPS, "MaLop", "TenLop", gIAOVIEN.MaLop);
+            ViewBag.MaMon = new SelectList(db.MONHOCS, "MaMon", "TenMon", gIAOVIEN.MaMon);
             return View(gIAOVIEN);
         }
 
@@ -70,6 +75,8 @@ namespace Quanlydiem.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MaLop = new SelectList(db.LOPS, "MaLop", "TenLop", gIAOVIEN.MaLop);
+            ViewBag.MaMon = new SelectList(db.MONHOCS, "MaMon", "TenMon", gIAOVIEN.MaMon);
             return View(gIAOVIEN);
         }
 
@@ -78,7 +85,7 @@ namespace Quanlydiem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaGV,HoTenGV,NamSinh,MaMon,SoDT")] GIAOVIEN gIAOVIEN)
+        public ActionResult Edit([Bind(Include = "MaGV,HoTenGV,NamSinh,MaMon,SoDT,MaLop")] GIAOVIEN gIAOVIEN)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +93,8 @@ namespace Quanlydiem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MaLop = new SelectList(db.LOPS, "MaLop", "TenLop", gIAOVIEN.MaLop);
+            ViewBag.MaMon = new SelectList(db.MONHOCS, "MaMon", "TenMon", gIAOVIEN.MaMon);
             return View(gIAOVIEN);
         }
 

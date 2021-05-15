@@ -6,14 +6,14 @@ namespace Quanlydiem.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Create_Table_DIEM : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class Create_Table_Account : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_DIEM));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_Account));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105100846117_Create_Table_DIEM"; }
+            get { return "202105140253488_Create_Table_Account"; }
         }
         
         string IMigrationMetadata.Source

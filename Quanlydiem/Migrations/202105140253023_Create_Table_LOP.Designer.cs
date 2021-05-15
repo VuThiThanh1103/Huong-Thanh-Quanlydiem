@@ -6,14 +6,14 @@ namespace Quanlydiem.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Create_Table_HOCSINH : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class Create_Table_LOP : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_HOCSINH));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_LOP));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105100843336_Create_Table_HOCSINH"; }
+            get { return "202105140253023_Create_Table_LOP"; }
         }
         
         string IMigrationMetadata.Source

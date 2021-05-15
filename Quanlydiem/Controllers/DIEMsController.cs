@@ -17,7 +17,8 @@ namespace Quanlydiem.Controllers
         // GET: DIEMs
         public ActionResult Index()
         {
-            return View(db.Diems.ToList());
+            var diems = db.Diems.Include(d => d.HOCSINH).Include(d => d.MONHOC);
+            return View(diems.ToList());
         }
 
         // GET: DIEMs/Details/5
@@ -38,6 +39,8 @@ namespace Quanlydiem.Controllers
         // GET: DIEMs/Create
         public ActionResult Create()
         {
+            ViewBag.MaHS = new SelectList(db.HOCSINHS, "MaHS", "TenHS");
+            ViewBag.MaMon = new SelectList(db.MONHOCS, "MaMon", "TenMon");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace Quanlydiem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "bangdiem,MaHS,MaMon,DiemMieng,DiemMotTiet")] DIEM dIEM)
+        public ActionResult Create([Bind(Include = "bangdiem,MaHS,MaMon,DiemMieng,DiemMotTiet,Tong")] DIEM dIEM)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace Quanlydiem.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.MaHS = new SelectList(db.HOCSINHS, "MaHS", "TenHS", dIEM.MaHS);
+            ViewBag.MaMon = new SelectList(db.MONHOCS, "MaMon", "TenMon", dIEM.MaMon);
             return View(dIEM);
         }
 
@@ -70,6 +75,8 @@ namespace Quanlydiem.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MaHS = new SelectList(db.HOCSINHS, "MaHS", "TenHS", dIEM.MaHS);
+            ViewBag.MaMon = new SelectList(db.MONHOCS, "MaMon", "TenMon", dIEM.MaMon);
             return View(dIEM);
         }
 
@@ -78,7 +85,7 @@ namespace Quanlydiem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "bangdiem,MaHS,MaMon,DiemMieng,DiemMotTiet")] DIEM dIEM)
+        public ActionResult Edit([Bind(Include = "bangdiem,MaHS,MaMon,DiemMieng,DiemMotTiet,Tong")] DIEM dIEM)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +93,8 @@ namespace Quanlydiem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MaHS = new SelectList(db.HOCSINHS, "MaHS", "TenHS", dIEM.MaHS);
+            ViewBag.MaMon = new SelectList(db.MONHOCS, "MaMon", "TenMon", dIEM.MaMon);
             return View(dIEM);
         }
 
@@ -122,6 +131,17 @@ namespace Quanlydiem.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult TimKiem(string strceach)
+        {
+            //TH1:
+            var DIEM = (from s in db.Diems select s).ToList();
+            if (!String.IsNullOrEmpty(strceach))
+            {
+                DIEM = DIEM.Where(x => x.MaHS.Contains(strceach)).ToList();
+            }
+
+            return View(DIEM);
         }
     }
 }

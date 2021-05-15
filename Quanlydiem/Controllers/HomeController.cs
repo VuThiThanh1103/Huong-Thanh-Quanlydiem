@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Quanlydiem.Controllers
 {
+
     public class HomeController : Controller
     {
         public ActionResult Index()

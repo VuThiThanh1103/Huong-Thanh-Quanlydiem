@@ -7,13 +7,13 @@ namespace Quanlydiem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Create_Table_Account : IMigrationMetadata
+    public sealed partial class Create_Table_MONHOC : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_Account));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_MONHOC));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105101314386_Create_Table_Account"; }
+            get { return "202105140252484_Create_Table_MONHOC"; }
         }
         
         string IMigrationMetadata.Source

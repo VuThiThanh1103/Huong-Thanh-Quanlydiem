@@ -5,17 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using Quanlydiem.Models;
-
 namespace Quanlydiem.Controllers
 {
     public class AccountController : Controller
     {
         Encrytion encry = new Encrytion();
         QuanlydiemDbContext db = new QuanlydiemDbContext();
-        private string encrtionpass;
-
-        public object FormsAuthemtication { get; private set; }
-
+        [HttpGet]
         // GET: Account
         public ActionResult Register()
         {
@@ -24,7 +20,7 @@ namespace Quanlydiem.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Register (Account acc)
+        public ActionResult Register(Account acc)
         {
             if (ModelState.IsValid)
             {
@@ -48,16 +44,16 @@ namespace Quanlydiem.Controllers
             if (ModelState.IsValid)
             {
                 string encrytionpass = encry.PasswordEncrytion(acc.Password);
-                var model = db.Accounts.Where(m => m.TenDN == acc.TenDN && m.Password == encrtionpass).ToList().Count();
+                var model = db.Accounts.Where(m => m.Username == acc.Username && m.Password == encrytionpass).ToList().Count();
                 if (model == 1)
                 {
-                     FormsAuthentication.SetAuthCookie(acc.TenDN, true);
+                    FormsAuthentication.SetAuthCookie(acc.Username, true);
                     return RedirectToAction("Index", "Home");
-                }    
-                else
+                }
+                else 
                 {
-                    ModelState.AddModelError("", "Thông Tin Đăng Nhập Không Chính Xác");
-                }    
+                    ModelState.AddModelError("", "Thông tin đăng nhập không chính xác");
+                }         
             }
             return View(acc);
         }

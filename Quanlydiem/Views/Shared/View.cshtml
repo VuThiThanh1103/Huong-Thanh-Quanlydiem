@@ -1,0 +1,24 @@
+﻿
+<div class="navbar navbar-inverse navbar-fixed-top">
+   
+    <div class="container">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Index", "Index", "Home")</li>
+                <li>@Html.ActionLink("Đăng Nhập", "Login", "Account")</li>
+                <li>
+                    <form>
+                        <div class="form-group form-inline">
+                            <input placeholder="Nhập mã học sinh" type="text" name="MaHS" class="form-control form-inline" />
+                            <input type="submit" name="Submit" value="Tìm Kiếm" class="form-control" />
+                        </div>
+
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

@@ -3,7 +3,7 @@ namespace Quanlydiem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Craete_Table_Encrytion : DbMigration
+    public partial class Delete_Table_HOCSINH : DbMigration
     {
         public override void Up()
         {

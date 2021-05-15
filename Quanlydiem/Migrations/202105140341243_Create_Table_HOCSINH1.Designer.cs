@@ -7,13 +7,13 @@ namespace Quanlydiem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Craete_Table_Encrytion : IMigrationMetadata
+    public sealed partial class Create_Table_HOCSINH1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Craete_Table_Encrytion));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_HOCSINH1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105101323212_Craete_Table_Encrytion"; }
+            get { return "202105140341243_Create_Table_HOCSINH1"; }
         }
         
         string IMigrationMetadata.Source

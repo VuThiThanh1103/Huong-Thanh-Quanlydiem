@@ -5,26 +5,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2></h2>
+<h2>Details</h2>
 
 <div>
     <h4>DIEM</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.MaHS)
+            @Html.DisplayNameFor(model => model.HOCSINH.TenHS)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaHS)
+            @Html.DisplayFor(model => model.HOCSINH.TenHS)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MaMon)
+            @Html.DisplayNameFor(model => model.MONHOC.TenMon)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaMon)
+            @Html.DisplayFor(model => model.MONHOC.TenMon)
         </dd>
 
         <dt>
@@ -41,6 +41,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.DiemMotTiet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tong)
         </dd>
 
     </dl>

@@ -5,26 +5,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2 class="w3-center w3-text-blue" style=" font-family: Times New Roman; font-size:50px ">Xóa Thông Tin</h2>
 
-
-<h3>Bạn có chắc muốn xóa dữ liệu không?</h3>
 <div>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             <label>Mã Học Sinh</label>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaHS)
+            @Html.DisplayFor(model => model.HOCSINH.MaHS)
         </dd>
-
         <dt>
-            <label>Mã Môn Học</label>
+            <label>Tên Học Sinh</label>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaMon)
+            @Html.DisplayFor(model => model.HOCSINH.TenHS)
+        </dd>
+        <dt>
+            <label>Môn Học</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONHOC.TenMon)
         </dd>
 
         <dt>
@@ -41,6 +45,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.DiemMotTiet)
+        </dd>
+
+        <dt>
+           <label>Tổng</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tong)
         </dd>
 
     </dl>

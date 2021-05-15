@@ -5,16 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Xóa</h2>
-
-<h3>Bạn có chắc muốn xóa không?</h3>
+<h2 class="w3-center w3-text-blue" style=" font-family: Times New Roman; font-size:50px ">Xóa Dữ Liệu</h2>
+@Styles.Render("~/Content/css")
 <div>
-
     <hr />
     <dl class="dl-horizontal">
-
         <dt>
-           <label>Tên Học Sinh</label>
+            <label>Tên Học Sinh</label>
         </dt>
 
         <dd>
@@ -46,11 +43,11 @@
         </dd>
 
         <dt>
-            <label>Lớp</label>
+            <label>Mã Lớp</label>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Lop)
+            @Html.DisplayFor(model => model.MaLop)
         </dd>
 
     </dl>
@@ -61,7 +58,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Quay Lại", "Index")
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

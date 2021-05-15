@@ -50,7 +50,7 @@ namespace Quanlydiem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaHS,TenHS,NamSinh,GioiTinh,QueQuan,Lop")] HOCSINH hOCSINH)
+        public ActionResult Create([Bind(Include = "MaHS,TenHS,NamSinh,GioiTinh,QueQuan,MaLop")] HOCSINH hOCSINH)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace Quanlydiem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaHS,TenHS,NamSinh,GioiTinh,QueQuan,Lop")] HOCSINH hOCSINH)
+        public ActionResult Edit([Bind(Include = "MaHS,TenHS,NamSinh,GioiTinh,QueQuan,MaLop")] HOCSINH hOCSINH)
         {
             if (ModelState.IsValid)
             {
@@ -118,7 +118,6 @@ namespace Quanlydiem.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
         public ActionResult UploadFile(HttpPostedFileBase file)
         {
             //dat ten cho file
@@ -138,9 +137,9 @@ namespace Quanlydiem.Controllers
                 HS.NamSinh = dt.Rows[i][2].ToString();
                 HS.GioiTinh = dt.Rows[i][3].ToString();
                 HS.QueQuan = dt.Rows[i][4].ToString();
-                HS.Lop = dt.Rows[i][5].ToString();
+                HS.MaLop = dt.Rows[i][5].ToString();
                 db.HOCSINHS.Add(HS);
-                db.SaveChanges();
+                db.SaveChanges(); ;
             }
             return RedirectToAction("Index");
         }
@@ -203,7 +202,7 @@ namespace Quanlydiem.Controllers
             bulkcopy.ColumnMappings.Add(2, "NamSinh");
             bulkcopy.ColumnMappings.Add(2, "GioiTinh");
             bulkcopy.ColumnMappings.Add(2, "QueQuan");
-            bulkcopy.ColumnMappings.Add(2, "Lop");
+            bulkcopy.ColumnMappings.Add(2, "MaLop");
             con.Open();
             bulkcopy.WriteToServer(dt);
             con.Close();
@@ -215,6 +214,25 @@ namespace Quanlydiem.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult LayDuLieu()
+        {
+            //TH1:
+            var HOCSINH = (from s in db.HOCSINHS  select s).ToList();
+            ViewBag.HOCSINHS = HOCSINH;
+            
+            return View();
+        }
+        public ActionResult TimKiem( string strceach)
+        {
+            //TH1:
+            var HOCSINH = (from s in db.HOCSINHS select s).ToList();
+            if (!String.IsNullOrEmpty(strceach))
+            {
+                HOCSINH = HOCSINH.Where(x => x.MaHS.Contains(strceach) || x.TenHS.Contains(strceach)).ToList();
+            }    
+
+            return View(HOCSINH);
         }
     }
 }

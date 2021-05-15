@@ -5,13 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Giáo Viên</h2>
+<h2 class="w3-center w3-text-blue" style=" font-family: Times New Roman; font-size:50px ">Giáo Viên</h2>
 @Styles.Render("~/Content/css")
 
 <p>
     @Html.ActionLink("Tạo Mới Dữ Liệu", "Create")
 </p>
-<table class="w3-table-all w3-hoverable w3-card">
+<table class="w3-table-all w3-hoverable table-bordered" style="font-family: Times New Roman; font-size:20px">
     <tr class="w3-blue-grey">
         <th>
             <label>Mã Giáo Viên</label>
@@ -23,11 +23,15 @@
             <label>Năm Sinh</label>
         </th>
         <th>
-            <label>Mã Môn</label>
+            <label>Tên Môn Học</label>
+        </th>
+        <th>
+            <label>Tên Lớp</label>
         </th>
         <th>
             <label>Số Điện Thoại</label>
         </th>
+
         <th></th>
     </tr>
 
@@ -44,7 +48,10 @@
         @Html.DisplayFor(modelItem => item.NamSinh)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.MaMon)
+        @Html.DisplayFor(modelItem => item.MONHOC.TenMon)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LOP.TenLop)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.SoDT)

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "LayDuLieu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LayDuLieu</h2>
+
+<table class="w3-table-all w3-hoverable table-bordered " style="font-family: Times New Roman; font-size:20px">
+    <thead>
+        <tr class="w3-blue-grey  w3-center">
+            <th>
+                <label>Lớp</label>
+            </th>
+            <th>
+                <label>Mã Học Sinh</label>
+            </th>
+            <th>
+                <label>Tên Học Sinh</label>
+            </th>
+            <th>
+                <label>Năm Sinh</label>
+            </th>
+            <th>
+                <label>Giới Tính</label>
+            </th>
+            <th>
+                <label>Quê Quán</label>
+            </th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in ViewBag.hocsinhs)
+        {
+        <tr style="width: 15%">
+            <td>
+                @item.MaLop
+            </td>
+            <td>
+                @item.MaHS
+            </td>
+            <td>
+                @Html.Raw(item.TenHS)
+            </td>
+            <td>
+                @item.NamSinh
+            </td>
+            <td>
+                @item.GioiTinh
+            </td>
+            <td>
+                @item.QueQuan
+            </td>
+            
+
+        </tr>
+        }
+    </tbody>
+</table>

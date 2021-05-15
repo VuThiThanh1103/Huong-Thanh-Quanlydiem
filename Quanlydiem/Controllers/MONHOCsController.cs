@@ -46,7 +46,7 @@ namespace Quanlydiem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaMon,TenMonHoc,SiSo")] MONHOC mONHOC)
+        public ActionResult Create([Bind(Include = "MaMon,TenMon,SoTinChi,SiSo")] MONHOC mONHOC)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Quanlydiem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaMon,TenMonHoc,SiSo")] MONHOC mONHOC)
+        public ActionResult Edit([Bind(Include = "MaMon,TenMon,SoTinChi,SiSo")] MONHOC mONHOC)
         {
             if (ModelState.IsValid)
             {
