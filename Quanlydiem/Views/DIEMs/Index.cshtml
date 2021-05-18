@@ -10,6 +10,7 @@
 <p>
     @Html.ActionLink("Tạo mới dữ liệu điểm", "Create")
 </p>
+
 <table class="w3-table-all w3-hoverable " style="font-family: Times New Roman; font-size:20px">
     <tr class="w3-blue-grey">
         <th>
@@ -27,9 +28,7 @@
         <th>
             <label>Điểm Một Tiết</label>
         </th>
-        <th>
-            <label>Tổng</label>
-        </th>
+        
         <th></th>
     </tr>
 
@@ -40,7 +39,7 @@
         @Html.DisplayFor(modelItem => item.HOCSINH.MaHS)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.HOCSINH.TenHS)
+        @Html.Raw(item.HOCSINH.TenHS)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.MONHOC.TenMon)
@@ -51,9 +50,7 @@
     <td>
         @Html.DisplayFor(modelItem => item.DiemMotTiet)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Tong)
-    </td>
+   
     <td>
         @Html.ActionLink("Sửa", "Edit", new { id = item.bangdiem }) |
         @Html.ActionLink("Xóa", "Delete", new { id = item.bangdiem })

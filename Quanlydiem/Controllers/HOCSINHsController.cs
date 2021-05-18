@@ -17,10 +17,11 @@ namespace Quanlydiem.Controllers
     public class HOCSINHsController : Controller
     {
         private QuanlydiemDbContext db = new QuanlydiemDbContext();
-
+        [Authorize]
         // GET: HOCSINHs
         public ActionResult Index()
         {
+            var HOCSINHS = db.LOPS.Include(g => g.MaLop);
             return View(db.HOCSINHS.ToList());
         }
 
@@ -42,6 +43,7 @@ namespace Quanlydiem.Controllers
         // GET: HOCSINHs/Create
         public ActionResult Create()
         {
+            ViewBag.MaLop = new SelectList(db.LOPS, "MaLop", "TenLop");
             return View();
         }
 
@@ -58,7 +60,7 @@ namespace Quanlydiem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.MaLop = new SelectList(db.LOPS, "MaLop", "TenLop", hOCSINH.MaLop);
             return View(hOCSINH);
         }
 
@@ -74,6 +76,7 @@ namespace Quanlydiem.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MaLop = new SelectList(db.LOPS, "MaLop", "TenLop", hOCSINH.MaLop);
             return View(hOCSINH);
         }
 
@@ -90,6 +93,7 @@ namespace Quanlydiem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MaLop = new SelectList(db.LOPS, "MaLop", "TenLop", hOCSINH.MaLop);
             return View(hOCSINH);
         }
 
@@ -139,7 +143,7 @@ namespace Quanlydiem.Controllers
                 HS.QueQuan = dt.Rows[i][4].ToString();
                 HS.MaLop = dt.Rows[i][5].ToString();
                 db.HOCSINHS.Add(HS);
-                db.SaveChanges(); ;
+                db.SaveChanges(); 
             }
             return RedirectToAction("Index");
         }
@@ -225,7 +229,7 @@ namespace Quanlydiem.Controllers
         }
         public ActionResult TimKiem( string strceach)
         {
-            //TH1:
+            // lấy ra danh sách của bảng
             var HOCSINH = (from s in db.HOCSINHS select s).ToList();
             if (!String.IsNullOrEmpty(strceach))
             {

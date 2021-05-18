@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Quanlydiem.Models.HOCSINH>
 @{
     ViewBag.Title = "LayDuLieu";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -27,7 +27,7 @@
             <th>
                 <label>Quê Quán</label>
             </th>
-            
+
 
         </tr>
     </thead>
@@ -35,28 +35,28 @@
 
         @foreach (var item in ViewBag.hocsinhs)
         {
-        <tr style="width: 15%">
-            <td>
-                @item.MaLop
-            </td>
-            <td>
-                @item.MaHS
-            </td>
-            <td>
-                @Html.Raw(item.TenHS)
-            </td>
-            <td>
-                @item.NamSinh
-            </td>
-            <td>
-                @item.GioiTinh
-            </td>
-            <td>
-                @item.QueQuan
-            </td>
-            
+            <tr style="width: 15%">
+                <td>
+                    @item.MaLop
+                </td>
+                <td>
+                    @item.MaHS
+                </td>
+                <td>
+                    @Html.Raw(item.TenHS)
+                </td>
+                <td>
+                    @item.NamSinh
+                </td>
+                <td>
+                    @item.GioiTinh
+                </td>
+                <td>
+                    @item.QueQuan
+                </td>
 
-        </tr>
+
+            </tr>
         }
     </tbody>
 </table>

@@ -7,13 +7,13 @@ namespace Quanlydiem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Create_Table_HOCSINH1 : IMigrationMetadata
+    public sealed partial class Create_Table_GIAOVIEN1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_HOCSINH1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_GIAOVIEN1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105140341243_Create_Table_HOCSINH1"; }
+            get { return "202105151449534_Create_Table_GIAOVIEN1"; }
         }
         
         string IMigrationMetadata.Source

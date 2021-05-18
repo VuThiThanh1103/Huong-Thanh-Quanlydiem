@@ -138,37 +138,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105140251430_Create_Table_HOCSINH.cs" />
-    <Compile Include="Migrations\202105140251430_Create_Table_HOCSINH.Designer.cs">
-      <DependentUpon>202105140251430_Create_Table_HOCSINH.cs</DependentUpon>
+    <Compile Include="Migrations\202105151446170_Create_Table_GIAOVIEN.cs" />
+    <Compile Include="Migrations\202105151446170_Create_Table_GIAOVIEN.Designer.cs">
+      <DependentUpon>202105151446170_Create_Table_GIAOVIEN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105140252270_Create_Table_GIAOVIEN.cs" />
-    <Compile Include="Migrations\202105140252270_Create_Table_GIAOVIEN.Designer.cs">
-      <DependentUpon>202105140252270_Create_Table_GIAOVIEN.cs</DependentUpon>
+    <Compile Include="Migrations\202105151447495_Create_Table_MONHOC.cs" />
+    <Compile Include="Migrations\202105151447495_Create_Table_MONHOC.Designer.cs">
+      <DependentUpon>202105151447495_Create_Table_MONHOC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105140252484_Create_Table_MONHOC.cs" />
-    <Compile Include="Migrations\202105140252484_Create_Table_MONHOC.Designer.cs">
-      <DependentUpon>202105140252484_Create_Table_MONHOC.cs</DependentUpon>
+    <Compile Include="Migrations\202105151448281_Delete_Table_GIAOVIEN.cs" />
+    <Compile Include="Migrations\202105151448281_Delete_Table_GIAOVIEN.Designer.cs">
+      <DependentUpon>202105151448281_Delete_Table_GIAOVIEN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105140253023_Create_Table_LOP.cs" />
-    <Compile Include="Migrations\202105140253023_Create_Table_LOP.Designer.cs">
-      <DependentUpon>202105140253023_Create_Table_LOP.cs</DependentUpon>
+    <Compile Include="Migrations\202105151448451_Create_Table_LOP.cs" />
+    <Compile Include="Migrations\202105151448451_Create_Table_LOP.Designer.cs">
+      <DependentUpon>202105151448451_Create_Table_LOP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105140253172_Create_Table_DIEM.cs" />
-    <Compile Include="Migrations\202105140253172_Create_Table_DIEM.Designer.cs">
-      <DependentUpon>202105140253172_Create_Table_DIEM.cs</DependentUpon>
+    <Compile Include="Migrations\202105151449187_Create_Table_HOCSINH.cs" />
+    <Compile Include="Migrations\202105151449187_Create_Table_HOCSINH.Designer.cs">
+      <DependentUpon>202105151449187_Create_Table_HOCSINH.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105140253488_Create_Table_Account.cs" />
-    <Compile Include="Migrations\202105140253488_Create_Table_Account.Designer.cs">
-      <DependentUpon>202105140253488_Create_Table_Account.cs</DependentUpon>
+    <Compile Include="Migrations\202105151449534_Create_Table_GIAOVIEN1.cs" />
+    <Compile Include="Migrations\202105151449534_Create_Table_GIAOVIEN1.Designer.cs">
+      <DependentUpon>202105151449534_Create_Table_GIAOVIEN1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105140338368_Delete_Table_HOCSINH.cs" />
-    <Compile Include="Migrations\202105140338368_Delete_Table_HOCSINH.Designer.cs">
-      <DependentUpon>202105140338368_Delete_Table_HOCSINH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105140341243_Create_Table_HOCSINH1.cs" />
-    <Compile Include="Migrations\202105140341243_Create_Table_HOCSINH1.Designer.cs">
-      <DependentUpon>202105140341243_Create_Table_HOCSINH1.cs</DependentUpon>
+    <Compile Include="Migrations\202105151450108_Create_Table_DIEM.cs" />
+    <Compile Include="Migrations\202105151450108_Create_Table_DIEM.Designer.cs">
+      <DependentUpon>202105151450108_Create_Table_DIEM.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -616,29 +612,26 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105140251430_Create_Table_HOCSINH.resx">
-      <DependentUpon>202105140251430_Create_Table_HOCSINH.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105151446170_Create_Table_GIAOVIEN.resx">
+      <DependentUpon>202105151446170_Create_Table_GIAOVIEN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105140252270_Create_Table_GIAOVIEN.resx">
-      <DependentUpon>202105140252270_Create_Table_GIAOVIEN.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105151447495_Create_Table_MONHOC.resx">
+      <DependentUpon>202105151447495_Create_Table_MONHOC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105140252484_Create_Table_MONHOC.resx">
-      <DependentUpon>202105140252484_Create_Table_MONHOC.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105151448281_Delete_Table_GIAOVIEN.resx">
+      <DependentUpon>202105151448281_Delete_Table_GIAOVIEN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105140253023_Create_Table_LOP.resx">
-      <DependentUpon>202105140253023_Create_Table_LOP.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105151448451_Create_Table_LOP.resx">
+      <DependentUpon>202105151448451_Create_Table_LOP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105140253172_Create_Table_DIEM.resx">
-      <DependentUpon>202105140253172_Create_Table_DIEM.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105151449187_Create_Table_HOCSINH.resx">
+      <DependentUpon>202105151449187_Create_Table_HOCSINH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105140253488_Create_Table_Account.resx">
-      <DependentUpon>202105140253488_Create_Table_Account.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105151449534_Create_Table_GIAOVIEN1.resx">
+      <DependentUpon>202105151449534_Create_Table_GIAOVIEN1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105140338368_Delete_Table_HOCSINH.resx">
-      <DependentUpon>202105140338368_Delete_Table_HOCSINH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105140341243_Create_Table_HOCSINH1.resx">
-      <DependentUpon>202105140341243_Create_Table_HOCSINH1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105151450108_Create_Table_DIEM.resx">
+      <DependentUpon>202105151450108_Create_Table_DIEM.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

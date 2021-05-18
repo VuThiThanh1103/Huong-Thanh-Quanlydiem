@@ -13,7 +13,7 @@ namespace Quanlydiem.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202105140252484_Create_Table_MONHOC"; }
+            get { return "202105151447495_Create_Table_MONHOC"; }
         }
         
         string IMigrationMetadata.Source

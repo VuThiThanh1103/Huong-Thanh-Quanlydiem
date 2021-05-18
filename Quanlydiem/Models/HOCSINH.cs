@@ -15,7 +15,7 @@ namespace Quanlydiem.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HOCSINH()
         {
-            this.LOPS = new HashSet<LOP>();
+            LOPS = new HashSet<LOP>();
         }
 
         [Key]

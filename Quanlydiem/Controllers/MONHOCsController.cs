@@ -13,7 +13,7 @@ namespace Quanlydiem.Controllers
     public class MONHOCsController : Controller
     {
         private QuanlydiemDbContext db = new QuanlydiemDbContext();
-
+        [Authorize]
         // GET: MONHOCs
         public ActionResult Index()
         {

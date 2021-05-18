@@ -48,7 +48,7 @@
         @Html.DisplayFor(modelItem => item.MaHS)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.TenHS)
+        @Html.Raw(item.TenHS)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.NamSinh)
@@ -59,7 +59,7 @@
     <td>
         @Html.DisplayFor(modelItem => item.QueQuan)
     </td>
-
+    
     <td>
         @Html.ActionLink("Sửa", "Edit", new { id = item.MaHS }) |
         @Html.ActionLink("Xóa", "Delete", new { id = item.MaHS })

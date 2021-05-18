@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -13,7 +14,7 @@ namespace Quanlydiem.Controllers
     public class GIAOVIENsController : Controller
     {
         private QuanlydiemDbContext db = new QuanlydiemDbContext();
-
+        [Authorize]
         // GET: GIAOVIENs
         public ActionResult Index()
         {
@@ -123,7 +124,7 @@ namespace Quanlydiem.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+       
         protected override void Dispose(bool disposing)
         {
             if (disposing)

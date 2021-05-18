@@ -14,9 +14,9 @@ namespace Quanlydiem.Models
         public int bangdiem { get; set; }
         public String MaHS { get; set; }
         public String MaMon { get; set; }
-        public String DiemMieng { get; set; }
-        public String DiemMotTiet { get; set; }
-        public string Tong { get; set; }
+        public float DiemMieng { get; set; }
+        public float DiemMotTiet { get; set; }
+        public float Tong { get; set; }
         public virtual HOCSINH HOCSINH { get; set; }
         public virtual MONHOC MONHOC { get; set; }
 

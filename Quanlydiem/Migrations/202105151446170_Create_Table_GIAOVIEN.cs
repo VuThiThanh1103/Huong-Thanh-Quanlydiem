@@ -3,7 +3,7 @@ namespace Quanlydiem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Create_Table_HOCSINH : DbMigration
+    public partial class Create_Table_GIAOVIEN : DbMigration
     {
         public override void Up()
         {
@@ -23,9 +23,9 @@ namespace Quanlydiem.Migrations
                         bangdiem = c.Int(nullable: false, identity: true),
                         MaHS = c.String(maxLength: 128),
                         MaMon = c.String(maxLength: 128),
-                        DiemMieng = c.String(),
-                        DiemMotTiet = c.String(),
-                        Tong = c.String(),
+                        DiemMieng = c.Single(nullable: false),
+                        DiemMotTiet = c.Single(nullable: false),
+                        Tong = c.Single(nullable: false),
                     })
                 .PrimaryKey(t => t.bangdiem)
                 .ForeignKey("dbo.HOSSINHS", t => t.MaHS)
@@ -42,11 +42,9 @@ namespace Quanlydiem.Migrations
                         NamSinh = c.String(),
                         GioiTinh = c.String(),
                         QueQuan = c.String(),
-                        MaLop = c.String(maxLength: 128),
+                        MaLop = c.String(),
                     })
-                .PrimaryKey(t => t.MaHS)
-                .ForeignKey("dbo.LOPS", t => t.MaLop)
-                .Index(t => t.MaLop);
+                .PrimaryKey(t => t.MaHS);
             
             CreateTable(
                 "dbo.LOPS",
@@ -86,20 +84,36 @@ namespace Quanlydiem.Migrations
                     })
                 .PrimaryKey(t => t.MaMon);
             
+            CreateTable(
+                "dbo.LOPHOCSINHs",
+                c => new
+                    {
+                        LOP_MaLop = c.String(nullable: false, maxLength: 128),
+                        HOCSINH_MaHS = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => new { t.LOP_MaLop, t.HOCSINH_MaHS })
+                .ForeignKey("dbo.LOPS", t => t.LOP_MaLop, cascadeDelete: true)
+                .ForeignKey("dbo.HOSSINHS", t => t.HOCSINH_MaHS, cascadeDelete: true)
+                .Index(t => t.LOP_MaLop)
+                .Index(t => t.HOCSINH_MaHS);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Diems", "MaMon", "dbo.MONHOCS");
             DropForeignKey("dbo.Diems", "MaHS", "dbo.HOSSINHS");
-            DropForeignKey("dbo.HOSSINHS", "MaLop", "dbo.LOPS");
+            DropForeignKey("dbo.LOPHOCSINHs", "HOCSINH_MaHS", "dbo.HOSSINHS");
+            DropForeignKey("dbo.LOPHOCSINHs", "LOP_MaLop", "dbo.LOPS");
             DropForeignKey("dbo.GIAOVIENS", "MaMon", "dbo.MONHOCS");
             DropForeignKey("dbo.GIAOVIENS", "MaLop", "dbo.LOPS");
+            DropIndex("dbo.LOPHOCSINHs", new[] { "HOCSINH_MaHS" });
+            DropIndex("dbo.LOPHOCSINHs", new[] { "LOP_MaLop" });
             DropIndex("dbo.GIAOVIENS", new[] { "MaLop" });
             DropIndex("dbo.GIAOVIENS", new[] { "MaMon" });
-            DropIndex("dbo.HOSSINHS", new[] { "MaLop" });
             DropIndex("dbo.Diems", new[] { "MaMon" });
             DropIndex("dbo.Diems", new[] { "MaHS" });
+            DropTable("dbo.LOPHOCSINHs");
             DropTable("dbo.MONHOCS");
             DropTable("dbo.GIAOVIENS");
             DropTable("dbo.LOPS");

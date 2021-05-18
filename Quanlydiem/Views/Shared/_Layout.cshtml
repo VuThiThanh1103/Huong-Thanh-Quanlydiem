@@ -15,20 +15,21 @@
         <div class="container">
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Học Sinh", "Index", "HOCSINHs")</li>
-                    <li>@Html.ActionLink("Giáo Viên", "Index", "GIAOVIENs")</li>
                     <li>@Html.ActionLink("Môn Học", "Index", "MONHOCs")</li>
                     <li>@Html.ActionLink("Lớp", "Index", "LOPs")</li>
+                    <li>@Html.ActionLink("Giáo Viên", "Index", "GIAOVIENs")</li>
+                    <li>@Html.ActionLink("Học Sinh", "Index", "HOCSINHs")</li>
                     <li>@Html.ActionLink("Điểm", "Index", "DIEMs")</li>
                     <li>@Html.ActionLink("Đăng Nhập", "Login", "Account")</li>
                     <li>@Html.ActionLink("Đăng Xuất", "Logout", "Account")</li>
 
                 </ul>
                 @using (Html.BeginForm("TimKiem", "DIEMs", FormMethod.Post, new { @class = "navbar-form navbar-right" }))
+               
                 {
-                <div class="form-group"><input type="text" name="strceach" placeholder="Nhập mã học sinh"  class="form-control"/></div>
-                <div class="form-group"><button type="submit" class="form-control">OK</button></div>
-            }
+                    <div class="form-group"><input type="text" name="strceach" placeholder="Nhập mã học sinh" class="form-control" /></div>
+                    <div class="form-group"><button type="submit" class="form-control">OK</button></div>
+                }
             </div>
         </div>
     </div>

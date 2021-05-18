@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -13,7 +15,7 @@ namespace Quanlydiem.Controllers
     public class DIEMsController : Controller
     {
         private QuanlydiemDbContext db = new QuanlydiemDbContext();
-
+        [Authorize]
         // GET: DIEMs
         public ActionResult Index()
         {
@@ -124,6 +126,7 @@ namespace Quanlydiem.Controllers
             return RedirectToAction("Index");
         }
 
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -135,13 +138,25 @@ namespace Quanlydiem.Controllers
         public ActionResult TimKiem(string strceach)
         {
             //TH1:
-            var DIEM = (from s in db.Diems select s).ToList();
+            var DIEM = (from s in db.Diems 
+                        select s).ToList();
             if (!String.IsNullOrEmpty(strceach))
             {
-                DIEM = DIEM.Where(x => x.MaHS.Contains(strceach)).ToList();
+                DIEM = DIEM.Where(x => x.MaHS.Contains(strceach) ||  x.HOCSINH.TenHS.Contains(strceach)).ToList();
             }
 
             return View(DIEM);
         }
+        /*
+        public ActionResult LayDuLieu()
+        {
+            //TH1:
+            var DIEM = (from s in db.Diems
+                       where s.Tong == s.DiemMieng + s.DiemMieng
+                       select s).ToList();
+                       
+            ViewBag.diem = DIEM;
+            return View();
+        }*/
     }
 }

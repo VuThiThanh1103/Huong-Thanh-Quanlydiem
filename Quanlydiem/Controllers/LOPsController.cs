@@ -13,7 +13,7 @@ namespace Quanlydiem.Controllers
     public class LOPsController : Controller
     {
         private QuanlydiemDbContext db = new QuanlydiemDbContext();
-
+        [Authorize]
         // GET: LOPs
         public ActionResult Index()
         {
