@@ -166,6 +166,14 @@
     <Compile Include="Migrations\202105151450108_Create_Table_DIEM.Designer.cs">
       <DependentUpon>202105151450108_Create_Table_DIEM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105180041254_Delete_Table_HOCSINH.cs" />
+    <Compile Include="Migrations\202105180041254_Delete_Table_HOCSINH.Designer.cs">
+      <DependentUpon>202105180041254_Delete_Table_HOCSINH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105180044141_Create_Table_HOCSINH1.cs" />
+    <Compile Include="Migrations\202105180044141_Create_Table_HOCSINH1.Designer.cs">
+      <DependentUpon>202105180044141_Create_Table_HOCSINH1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\DIEM.cs" />
@@ -632,6 +640,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105151450108_Create_Table_DIEM.resx">
       <DependentUpon>202105151450108_Create_Table_DIEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105180041254_Delete_Table_HOCSINH.resx">
+      <DependentUpon>202105180041254_Delete_Table_HOCSINH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105180044141_Create_Table_HOCSINH1.resx">
+      <DependentUpon>202105180044141_Create_Table_HOCSINH1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
